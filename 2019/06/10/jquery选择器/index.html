@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="#基本选择器 基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素  #层叠选择器 如果想通过 DOM 元">
+  <meta name="description" content="1.基本选择器基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素">
 <meta name="keywords" content="-jquery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jquery选择器">
 <meta property="og:url" content="http://justaz.github.io/2019/06/10/jquery选择器/index.html">
 <meta property="og:site_name" content="图少の博客">
-<meta property="og:description" content="#基本选择器 基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素  #层叠选择器 如果想通过 DOM 元">
+<meta property="og:description" content="1.基本选择器基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T07:20:41.104Z">
+<meta property="og:updated_time" content="2019-06-12T02:05:47.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery选择器">
-<meta name="twitter:description" content="#基本选择器 基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素  #层叠选择器 如果想通过 DOM 元">
+<meta name="twitter:description" content="1.基本选择器基本选择器是Jquery中最常用的选择器  id选择器: $(“#id”) 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素 元素选择器: $(“div”) 选择所有的div标签,返回 div 元素数组 类选择器: $(“.class”) 选择使用 class 类的所有元素 $(“*”) 选中文档中的所有元素">
 
 
 
@@ -287,11 +287,40 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -393,7 +422,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-11 15:20:41" itemprop="dateModified" datetime="2019-06-11T15:20:41+08:00">2019-06-11</time>
+                <time title="修改时间：2019-06-12 10:05:47" itemprop="dateModified" datetime="2019-06-12T10:05:47+08:00">2019-06-12</time>
               
             
           </span>
@@ -445,53 +474,47 @@
       
 
       
-        <p>#基本选择器</p>
-<p>基本选择器是Jquery中最常用的选择器</p>
+        <h1 id="1-基本选择器"><a href="#1-基本选择器" class="headerlink" title="1.基本选择器"></a>1.基本选择器</h1><p>基本选择器是Jquery中最常用的选择器</p>
 <ul>
 <li>id选择器: <strong>$(“#id”)</strong> 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素</li>
 <li>元素选择器: <strong>$(“div”)</strong> 选择所有的div标签,返回 div 元素数组</li>
 <li>类选择器: <strong>$(“.class”)</strong> 选择使用 class 类的所有元素</li>
-<li>$(“*”) 选中文档中的所有元素</li>
+<li>$(“*”) 选中文档中的所有元素<a id="more"></a>
+
+</li>
 </ul>
-<p>#层叠选择器</p>
-<p>如果想通过 DOM 元素之间的 层次关系来获取特定元素,如:后代元素,子元素,相邻元素,兄弟元素等.则需要使用层次选择器</p>
+<h1 id="2-层叠选择器"><a href="#2-层叠选择器" class="headerlink" title="2.层叠选择器"></a>2.层叠选择器</h1><p>如果想通过 DOM 元素之间的 层次关系来获取特定元素,如:后代元素,子元素,相邻元素,兄弟元素等.则需要使用层次选择器</p>
 <ul>
 <li>后代选择器: <strong>$(“form input”)</strong> 选择所有 form 元素中的input元素,包含子元素</li>
 <li>儿子选择器: <strong>$(“form &gt; input”)</strong> 选择所有的form元素中的 input 元素,只包含子元素,不包含子元素的子元素</li>
 <li>相邻元素选择器: <strong>$(“label + input”)</strong> 选择label元素的下一个input元素节点</li>
 <li>兄弟选择器: <strong>$(“#perv ~ div”)</strong> 选择id为 prev 的标签元素的所有的属于同一个父元素的div标签</li>
 </ul>
-<p>#过滤选择器</p>
-<p>可以通过特定的规则筛选出所需的DOM元素,一般以 “:” 开头<br>按照不同的过滤规则,可分为:<strong>内容过滤</strong>,<strong>可见性过滤</strong>,<strong>属性过滤</strong>,<strong>子元素过滤</strong>,<strong>表单对象属性过滤选择器</strong></p>
-<p>##基础过滤选择器</p>
-<ul>
+<h1 id="3-过滤选择器"><a href="#3-过滤选择器" class="headerlink" title="3.过滤选择器"></a>3.过滤选择器</h1><p>可以通过特定的规则筛选出所需的DOM元素,一般以 “:” 开头<br>按照不同的过滤规则,可分为:<strong>内容过滤</strong>,<strong>可见性过滤</strong>,<strong>属性过滤</strong>,<strong>子元素过滤</strong>,<strong>表单对象属性过滤选择器</strong></p>
+<h2 id="3-1基础过滤选择器"><a href="#3-1基础过滤选择器" class="headerlink" title="3.1基础过滤选择器"></a>3.1基础过滤选择器</h2><ul>
 <li><strong>$(“tr:first”)</strong>:选择所有 tr 元素的第一个</li>
 <li><strong>(“tr:last”)</strong>:选择所有tr元素的最后一个</li>
 <li><strong>$(“tr:even”)</strong>:选择索引号为偶数的tr元素 索引从 0 开始</li>
 <li><strong>$(“tr:odd”)</strong> 选择所有的 tr 元素的 索引号为奇数</li>
 </ul>
-<p>##内容过滤器</p>
-<ul>
+<h2 id="3-2内容过滤器"><a href="#3-2内容过滤器" class="headerlink" title="3.2内容过滤器"></a>3.2内容过滤器</h2><ul>
 <li>$(“div:contains(‘jn’)”):选择所有div 中含有 jn 文本的元素</li>
 <li>$(“td:empty”)选择所有为空的 td 元素</li>
 <li>$(“div:has(p)”)选择所有含有 p 标签的div 元素</li>
 <li>$(“td:parent”)选择所有以td为父节点的元素数组</li>
 </ul>
-<p>##可视化过滤器</p>
-<ul>
+<h2 id="3-3可视化过滤器"><a href="#3-3可视化过滤器" class="headerlink" title="3.3可视化过滤器"></a>3.3可视化过滤器</h2><ul>
 <li>$(“div:hidden”)选择所有的被hidden的div元素</li>
 <li>$(“div:visible”)选择所有的可视化的div元素</li>
 </ul>
-<p>##属性选择过滤器</p>
-<ul>
+<h2 id="3-4属性选择过滤器"><a href="#3-4属性选择过滤器" class="headerlink" title="3.4属性选择过滤器"></a>3.4属性选择过滤器</h2><ul>
 <li>$(“div[id]”) 选择所有含 id 属性的div元素</li>
 <li>$(“input[name=’news’]”)选择所的name 属性等于 news 的 input 元素</li>
 <li>$(“input[name^=’news’]”)选择所有的name属性以’news’开头的input元素</li>
 <li>$(“input[name$=’news’]”)选择所有的name属性以news结尾的 input 元素</li>
 <li>$(“input[name*=’news’]”)选择包含’news’的input元素</li>
 </ul>
-<p>##子元素过滤器</p>
-<ul>
+<h2 id="3-5子元素过滤器"><a href="#3-5子元素过滤器" class="headerlink" title="3.5子元素过滤器"></a>3.5子元素过滤器</h2><ul>
 <li>$(“ul li:nth-child(n)”)匹配其父元素下的第 n 个元素 odd奇数 even偶数</li>
 <li>$(“div span:first-child”)返回所有的div元素的第一个子节点的数组</li>
 <li>$(“div span:last-child”)返回所有的div元素的最后一个节点</li>
@@ -566,6 +589,26 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/10/vue基本指令/" rel="next" title="Vue.js基本指令">
+                <i class="fa fa-chevron-left"></i> Vue.js基本指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/12/JavaScript值传递/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
       
@@ -605,8 +648,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,7 +673,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -640,7 +692,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -659,7 +713,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -722,6 +778,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基本选择器"><span class="nav-text">1.基本选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-层叠选择器"><span class="nav-text">2.层叠选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-过滤选择器"><span class="nav-text">3.过滤选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1基础过滤选择器"><span class="nav-text">3.1基础过滤选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2内容过滤器"><span class="nav-text">3.2内容过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3可视化过滤器"><span class="nav-text">3.3可视化过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4属性选择过滤器"><span class="nav-text">3.4属性选择过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5子元素过滤器"><span class="nav-text">3.5子元素过滤器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -871,6 +944,326 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
