@@ -361,6 +361,387 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/12/CSS之清除浮动/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑扬志">
+      <meta itemprop="description" content="穷则独善其身!!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="图少の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/12/CSS之清除浮动/" class="post-title-link" itemprop="url">CSS之清除浮动</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-12 21:47:26 / 修改时间：22:57:39" itemprop="dateCreated datePublished" datetime="2019-06-12T21:47:26+08:00">2019-06-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="浮动导致的问题"><a href="#浮动导致的问题" class="headerlink" title="浮动导致的问题"></a>浮动导致的问题</h1><blockquote>
+<p>若父级元素没有设置高度,内部元素都是浮动元素时,会导致父元素坍塌</p>
+</blockquote>
+<h1 id="清除浮动元素方法"><a href="#清除浮动元素方法" class="headerlink" title="清除浮动元素方法"></a>清除浮动元素方法</h1><ol>
+<li><p>父级div定义伪类:after和zoom<br>html:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"parent"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"son"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.parent</span>&#123;</span><br><span class="line">  <span class="attribute">zoom</span>:<span class="number">1</span></span><br><span class="line">  //zoom是IE浏览器专有特性,可以设置对象的缩放比例,可用来清除浮动,和清除margin重叠</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原理:添加一个伪元素,利用 css 的 clear:both 清除浮动,让父元素自动获得高度<br>优点:浏览器支持好<br>缺点:代码多,需要和 zoom 一起使用才能让主流浏览器支持</p>
+</blockquote>
+</li>
+<li><p>在结尾处添加空div标签<br>html:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"parent"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"son"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"clear"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear</span>&#123;</span><br><span class="line">  <span class="attribute">clear</span>:both</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>原理:添加一个空div,利用css的clear:both清除浮动,让父级div能自动获取高度<br>优点:代码少,浏览器支持好<br>缺点:如果页面浮动布局多,就会增加很多 空div</p>
+</blockquote>
+</li>
+<li><p>父级div定义height,指定高度</p>
+<blockquote>
+<p>原理:手动定义height,解决父级div无法自动获取高度的问题<br>优点:代码少,简单<br>缺点:只适用高度固定的布局</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="触发BFC"><a href="#触发BFC" class="headerlink" title="触发BFC"></a>触发BFC</h2><ol start="4">
+<li>父级div定义 overflow<ul>
+<li>设置父级元素 overflow:hidden<blockquote>
+<p>原理:必须定义width,不能定义 height,触发 BFC<br>优点:简单,浏览器支持好<br>缺点:不能和position配合使用,因为超出的尺寸会被隐藏</p>
+</blockquote>
+</li>
+<li>设置父级元素 overfolw:auto<blockquote>
+<p>原理:必须定义width,不能定义 height,触发 BFC<br>优点:简单,浏览器支持好<br>缺点:内部高度超过父级div时,会出现滚动条</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/12/什么是BFC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑扬志">
+      <meta itemprop="description" content="穷则独善其身!!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="图少の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/12/什么是BFC/" class="post-title-link" itemprop="url">什么是BFC?</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-12 21:16:30 / 修改时间：22:29:26" itemprop="dateCreated datePublished" datetime="2019-06-12T21:16:30+08:00">2019-06-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h1><ul>
+<li>BFC: 块级格式化上下文</li>
+<li>它决定元素如何对其内容进行定位,以及和其他元素的相互关系</li>
+<li>若一个元素符合了成为 BFC 的条件,该元素内部的元素布局和定位与外部元素互不影响,是一个独立的容器</li>
+<li>在 BFC 中,盒子从顶端开始垂直的一个接一个排列</li>
+<li>在同一个 BFC 下,两个相邻的块级盒子的垂直外边距会重叠
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/12/什么是BFC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/12/JavaScript数组相关api/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -584,7 +965,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 10:58:02 / 修改时间：12:33:07" itemprop="dateCreated datePublished" datetime="2019-06-12T10:58:02+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 10:58:02 / 修改时间：22:41:38" itemprop="dateCreated datePublished" datetime="2019-06-12T10:58:02+08:00">2019-06-12</time>
             
 
             
@@ -606,7 +987,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
 
                 
                 
@@ -777,7 +1158,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-12 14:51:12" itemprop="dateModified" datetime="2019-06-12T14:51:12+08:00">2019-06-12</time>
+                <time title="修改时间：2019-06-12 21:53:01" itemprop="dateModified" datetime="2019-06-12T21:53:01+08:00">2019-06-12</time>
               
             
           </span>
@@ -1111,7 +1492,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1161,7 +1542,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

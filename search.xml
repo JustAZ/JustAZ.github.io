@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS之清除浮动]]></title>
+    <url>%2F2019%2F06%2F12%2FCSS%E4%B9%8B%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
+    <content type="text"><![CDATA[浮动导致的问题 若父级元素没有设置高度,内部元素都是浮动元素时,会导致父元素坍塌 清除浮动元素方法 父级div定义伪类:after和zoomhtml: 123&lt;div class="parent"&gt; &lt;div class="son"&gt;&lt;/div&gt;&lt;/div&gt; css: 123456789.parent:after&#123; display:block; clear:both; content:''&#125;.parent&#123; zoom:1 //zoom是IE浏览器专有特性,可以设置对象的缩放比例,可用来清除浮动,和清除margin重叠&#125; 原理:添加一个伪元素,利用 css 的 clear:both 清除浮动,让父元素自动获得高度优点:浏览器支持好缺点:代码多,需要和 zoom 一起使用才能让主流浏览器支持 在结尾处添加空div标签html: 1234&lt;div class="parent"&gt; &lt;div class="son"&gt;&lt;/div&gt; &lt;div class="clear"&gt;&lt;/div&gt;&lt;/div&gt; css: 123.clear&#123; clear:both&#125; 原理:添加一个空div,利用css的clear:both清除浮动,让父级div能自动获取高度优点:代码少,浏览器支持好缺点:如果页面浮动布局多,就会增加很多 空div 父级div定义height,指定高度 原理:手动定义height,解决父级div无法自动获取高度的问题优点:代码少,简单缺点:只适用高度固定的布局 触发BFC 父级div定义 overflow 设置父级元素 overflow:hidden 原理:必须定义width,不能定义 height,触发 BFC优点:简单,浏览器支持好缺点:不能和position配合使用,因为超出的尺寸会被隐藏 设置父级元素 overfolw:auto 原理:必须定义width,不能定义 height,触发 BFC优点:简单,浏览器支持好缺点:内部高度超过父级div时,会出现滚动条]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>-css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[什么是BFC?]]></title>
+    <url>%2F2019%2F06%2F12%2F%E4%BB%80%E4%B9%88%E6%98%AFBFC%2F</url>
+    <content type="text"><![CDATA[什么是BFC BFC: 块级格式化上下文 它决定元素如何对其内容进行定位,以及和其他元素的相互关系 若一个元素符合了成为 BFC 的条件,该元素内部的元素布局和定位与外部元素互不影响,是一个独立的容器 在 BFC 中,盒子从顶端开始垂直的一个接一个排列 在同一个 BFC 下,两个相邻的块级盒子的垂直外边距会重叠 怎么触发BFC 根元素 浮动元素–float 除 none 外的值 overflow 除 visible 外的值(hidden,auto,scroll) display 为 inline-blocks,table-cells,table-captions position 为绝对定位( absoulte,fixed ) 计算BFC高度时,浮动元素参与计算 BFC 有什么作用 清除内部浮动 当父元素没有设置高度时,子元素都是浮动元素时,此时父元素高度会发生坍塌,即子元素无法撑起父元素的高度.此时触发BFC可解决此问题 清除浮动方法 不被浮动元素遮盖 div浮动兄弟遮盖问题: 由于左侧块级元素发生浮动,所以和右侧不在同一层内,所以产生遮盖 解决方法: 给右侧块级设置 overflow:hidden 触发 BFC 解决元素 margin 坍塌问题 margin塌陷问题: 在标准文档流中,块级标签中竖直方向上margin,会以较大的为准,就出现margin坍塌问题 可以使用 overflow:hidden 触发 BFC 解决 相关文章 BFC原理剖析 CSS篇——BFC与margin BFC及其作用]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>-css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript数组相关api]]></title>
     <url>%2F2019%2F06%2F12%2FJavaScript%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3api%2F</url>
     <content type="text"><![CDATA[数组检测是否为数组 使用 instanceof 操作符,判断是否为 Array 上的一个实例 1arr instanceof Array 使用 Array.isArray( arr ) 1Array.isArray( arr ) //若是数组,返回 true]]></content>
@@ -16,7 +38,7 @@
     <url>%2F2019%2F06%2F12%2Fjavascript%E5%80%BC%E4%BC%A0%E9%80%92%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[值类型与引用类型 值类型: null,undefined,boolean,number,string 引用类型: Array,Function,Number,Object 等值类型与引用类型的区别 值类型是按值访问的,变量保存的变量值,数据保存在栈结构当中 引用类型是按引用访问的,引用类型的存储需要栈区和堆区,变量保存的是引用地址,栈区内存保存的是引用地址,而堆中保存的保存的实际对象 基本类型在赋值时是拷贝值,引用类型在赋值时是拷贝地址 函数传递是按值传递的 在参数传递基本类型的时候,被传递的值会被复制给一个局部变量(即命名参数) 基本类型的值传递 12345678function addTen( num )&#123; num += 10; return num;&#125;var count = 20;var result = addTen( count );console.log( count ); //20console.log( result ); //30 小结: 基本类型的是值传递,函数内部对变量count的修改不会影响函数外部变量count. 参数 num 和 变量coun 互不认识,只是具有共同的值 引用类型的值传递一(修改属性) 123456function setName( obj )&#123; obj.name = "Zheng";&#125;var person = new Object();setName( person )console.log( person.name ) // "Zheng" 小结:从上述看,函数内部的局部变量变化确实是反映在函数外部了.因为此时,函数传递的是内存地址,所以函数内部的局部变量,即参数 obj 和 person 所引用的是同一个对象 ,此时修改 obj 会反映到函数外部.(修改对象属性会反映到外部) 来看看这个例子吧 引用类型的值传递二(修改对象的引用) 12345678function setName( obj )&#123; obj.name = "Zheng"; obj = new Object(); //此时将一个新对象赋值给obj,操作的函数内部的局部对象,函数执行完毕就销毁 obj.name = "Yang"&#125;var person = new Object();setName( person );console.log( person.name ) // "Zheng" 小结: “obj = new Object()” 是对对象进行赋值,后续引用的也都是这个对象,跟传入的 person 没有关系,在函数执行完毕这个局部对象会被销毁 如果对传入对象本身赋值，则属于局部对象赋值，这个时候和传入的参数已经没有关系了 总结 函数参数传递是按值传递 函数内部对 变量的修改是 不会反映到函数外部的 当函数内部,对传入对象添加属性时,此时 反映到函数外部,而对 传入对象进行赋值操作时,则不会反映到外部,即函数对属性的操作是保留的 基本类型的值传递是,传递值本身(直接把值存在栈中).引用类型的值传递是,传递引用地址(栈中存储的是 引用地址,堆中存储复杂对象) 为甚么函数参数传递是值传递的方式呢? 因为在传递参数时,被传递的值会被赋值给一个局部变量,基本类型相当于在栈中进行值的拷贝,引用类型拷贝的是地址]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>javascript</category>
       </categories>
       <tags>
         <tag>-javascript</tag>
