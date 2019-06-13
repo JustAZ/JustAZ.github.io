@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git版本管理]]></title>
+    <url>%2F2019%2F06%2F13%2Fgit%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[版本回退 在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 commit.若误删文件,或改乱文件就可以,从最近的一个 commit 恢复 查看git的历史记录 1git log git log 可以显示从最近到最远的提交日志,可加参数 –pretty=oneline 回退到上一个版本 在 git 中,用 HEAD 表示当前版本,上一个版本就是 HEAND^,上上个就是 HEAD^^,如果往上100个版本写100个^会数不过来,直接写成 Head~100回到上一个版本(过去的版本): 1git reset --hard HEAD^ 去到下一个版本(未来的某一个版本)指定回到未来的某个版本: 1git reset --hard 1094a 1094a为版本号 当找不到未来版本的版本号时,可以使用 git reflog 记录每一次的命令 git 的版本回退速度非常快,因为git在内部有个指向当前版本的HEAD指针,当你回退版本的时候,git仅仅是把 HEAD 指向 上一个版本]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git的基本使用]]></title>
+    <url>%2F2019%2F06%2F13%2Fgit%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[什么是git? git是一个分布式版本控制系统 简单概要 git 与 svn 区别 svn 是集中式版本控制系统,而git是分布式的 git把内容按元数据方式存储,而svn把内容按文件存储 svn 是需要联网的,git不用依赖网络做任何事情 git 上每一个人都是一个版本库,对分支和合并有更好的支持 什么是版本库? 版本库,即为仓库.就是 .git 文件夹 这个目录下的文件都会被git管理起来 git的基本使用 创建版本库(本地仓库) 1git init 查看文件状态 1git status 提交所有改动到暂存区 1git add . 或 git add -A 提交到版本库,即把暂存区所有内容提交到当前分支 1git commit -m "init my project" 每次提交到版本库时都会要求添加备注信息 -m 与远程仓库创建连接 1git remote add orgin "github上的仓库地址" 远程库的名字就是origin,这是Git默认的叫法，也可以改成别的 将本地仓库内容推送到远程仓库 1git push -u orgin master 若时新建的远程仓库为空,加上 -u 参数,git不但会把本地的master分支内容推送到远程新的master分支,还会把本地的master分支和远程的master分支关联起来 以后就只需执行以下代码就可以将本地master分支的最新修改推送的Github 1git push orgin master 从远程仓库克隆 1git clone "远程仓库地址"]]></content>
+      <categories>
+        <category>git相关</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS之清除浮动]]></title>
     <url>%2F2019%2F06%2F12%2FCSS%E4%B9%8B%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
     <content type="text"><![CDATA[浮动导致的问题 若父级元素没有设置高度,内部元素都是浮动元素时,会导致父元素坍塌 清除浮动元素方法 父级div定义伪类:after和zoomhtml: 123&lt;div class="parent"&gt; &lt;div class="son"&gt;&lt;/div&gt;&lt;/div&gt; css: 123456789.parent:after&#123; display:block; clear:both; content:''&#125;.parent&#123; zoom:1 //zoom是IE浏览器专有特性,可以设置对象的缩放比例,可用来清除浮动,和清除margin重叠&#125; 原理:添加一个伪元素,利用 css 的 clear:both 清除浮动,让父元素自动获得高度优点:浏览器支持好缺点:代码多,需要和 zoom 一起使用才能让主流浏览器支持 在结尾处添加空div标签html: 1234&lt;div class="parent"&gt; &lt;div class="son"&gt;&lt;/div&gt; &lt;div class="clear"&gt;&lt;/div&gt;&lt;/div&gt; css: 123.clear&#123; clear:both&#125; 原理:添加一个空div,利用css的clear:both清除浮动,让父级div能自动获取高度优点:代码少,浏览器支持好缺点:如果页面浮动布局多,就会增加很多 空div 父级div定义height,指定高度 原理:手动定义height,解决父级div无法自动获取高度的问题优点:代码少,简单缺点:只适用高度固定的布局 触发BFC 父级div定义 overflow 设置父级元素 overflow:hidden 原理:必须定义width,不能定义 height,触发 BFC优点:简单,浏览器支持好缺点:不能和position配合使用,因为超出的尺寸会被隐藏 设置父级元素 overfolw:auto 原理:必须定义width,不能定义 height,触发 BFC优点:简单,浏览器支持好缺点:内部高度超过父级div时,会出现滚动条]]></content>
