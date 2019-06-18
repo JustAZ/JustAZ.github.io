@@ -15,6 +15,9 @@
     <title><![CDATA[git版本管理]]></title>
     <url>%2F2019%2F06%2F13%2Fgit%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%2F</url>
     <content type="text"><![CDATA[版本回退 在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 commit.若误删文件,或改乱文件就可以,从最近的一个 commit 恢复 查看git的历史记录 1git log git log 可以显示从最近到最远的提交日志,可加参数 –pretty=oneline 回退到上一个版本 在 git 中,用 HEAD 表示当前版本,上一个版本就是 HEAND^,上上个就是 HEAD^^,如果往上100个版本写100个^会数不过来,直接写成 Head~100回到上一个版本(过去的版本): 1git reset --hard HEAD^ 去到下一个版本(未来的某一个版本)指定回到未来的某个版本: 1git reset --hard 1094a 1094a为版本号 当找不到未来版本的版本号时,可以使用 git reflog 记录每一次的命令 git 的版本回退速度非常快,因为git在内部有个指向当前版本的HEAD指针,当你回退版本的时候,git仅仅是把 HEAD 指向 上一个版本]]></content>
+      <categories>
+        <category>git相关</category>
+      </categories>
       <tags>
         <tag>git</tag>
       </tags>
