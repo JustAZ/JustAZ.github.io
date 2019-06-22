@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]   本质上是模式匹配，只要等号两边的模式相同，左边的变量就会被赋予对应的值。  123456let [x,,y] = [1,2,3]x //13 //3let [head,...tail] = [1,2,3,4]head //1tail //">
+  <meta name="description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6解构赋值">
 <meta property="og:url" content="http://justaz.github.io/2019/06/22/ES6解构赋值/index.html">
 <meta property="og:site_name" content="图少の博客">
-<meta property="og:description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]   本质上是模式匹配，只要等号两边的模式相同，左边的变量就会被赋予对应的值。  123456let [x,,y] = [1,2,3]x //13 //3let [head,...tail] = [1,2,3,4]head //1tail //">
+<meta property="og:description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-22T12:02:13.500Z">
+<meta property="og:updated_time" content="2019-06-22T12:06:27.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6解构赋值">
-<meta name="twitter:description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]   本质上是模式匹配，只要等号两边的模式相同，左边的变量就会被赋予对应的值。  123456let [x,,y] = [1,2,3]x //13 //3let [head,...tail] = [1,2,3,4]head //1tail //">
+<meta name="twitter:description" content="数组的解构赋值、基本用法 以前变量赋值的写法，只能直接指定值 12let a = 1;let b = 2;  ES6写法 1let[a,b] = [1,2]">
 
 
 
@@ -404,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2019-06-22 20:01:26 / 修改时间：20:02:13" itemprop="dateCreated datePublished" datetime="2019-06-22T20:01:26+08:00">2019-06-22</time>
+              <time title="创建时间：2019-06-22 20:01:26 / 修改时间：20:06:27" itemprop="dateCreated datePublished" datetime="2019-06-22T20:01:26+08:00">2019-06-22</time>
             
 
             
@@ -450,16 +450,15 @@
 <li><p>ES6写法</p>
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let<span class="string">[a,b]</span> = <span class="string">[1,2]</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<a id="more"></a>
 <blockquote>
 <p>本质上是模式匹配，只要等号两边的模式相同，左边的变量就会被赋予对应的值。</p>
 </blockquote>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let [x,,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x <span class="comment">//1</span></span><br><span class="line"><span class="number">3</span> <span class="comment">//3</span></span><br><span class="line">let [head,...tail] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">head <span class="comment">//1</span></span><br><span class="line">tail <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let [x,,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x <span class="comment">//1</span></span><br><span class="line"><span class="number">3</span> <span class="comment">//3</span></span><br><span class="line">let [head,...tail] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">head <span class="comment">//1</span></span><br><span class="line">tail <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure>
 
-<p>若解构不成功，变量的值就等于undefined</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let <span class="string">[foo]</span> = <span class="string">[]</span> //解构失败</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+<p>  若解构不成功，变量的值就等于undefined<br>  <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let <span class="string">[foo]</span> = <span class="string">[]</span> //解构失败</span><br></pre></td></tr></table></figure></p>
 <h3 id="不完全解构"><a href="#不完全解构" class="headerlink" title="不完全解构"></a>不完全解构</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let [x,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x <span class="comment">//1</span></span><br><span class="line">y <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><blockquote>

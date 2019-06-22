@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
+  <meta name="description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6-let和const">
 <meta property="og:url" content="http://justaz.github.io/2019/06/22/ES6-let和const/index.html">
 <meta property="og:site_name" content="图少の博客">
-<meta property="og:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
+<meta property="og:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-22T12:00:49.175Z">
+<meta property="og:updated_time" content="2019-06-22T12:06:15.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-let和const">
-<meta name="twitter:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
+<meta name="twitter:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升">
 
 
 
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2019-06-22 19:59:31 / 修改时间：20:00:49" itemprop="dateCreated datePublished" datetime="2019-06-22T19:59:31+08:00">2019-06-22</time>
+              <time title="创建时间：2019-06-22 19:59:31 / 修改时间：20:06:15" itemprop="dateCreated datePublished" datetime="2019-06-22T19:59:31+08:00">2019-06-22</time>
             
 
             
@@ -466,10 +466,11 @@
 
 <ul>
 <li>let 声明变量是只在它所在的代码块有效，变量不提升</li>
-<li>var 声明变量会提升</li>
-</ul>
+<li>var 声明变量会提升<a id="more"></a>
 <h3 id="for循环技术器"><a href="#for循环技术器" class="headerlink" title="for循环技术器"></a>for循环技术器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//let</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>；i &lt; <span class="number">10</span>;i++ )&#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//在循环体外引用就会报错</span></span><br><span class="line">a[<span class="number">6</span>]() <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
 <blockquote>
 <p>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是 6。 JavaScript引擎内部会记住上一轮循环的值,初始化本轮的变量i，就在上一轮的基础上进行计算</p>
 </blockquote>
