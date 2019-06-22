@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="版本回退  在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 commit.若误删文件,或改乱文件就可以,从最近的一个 commit 恢复">
-<meta name="keywords" content="git">
+  <meta name="description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
+<meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git版本管理">
-<meta property="og:url" content="http://justaz.github.io/2019/06/13/git版本管理/index.html">
+<meta property="og:title" content="ES6-let和const">
+<meta property="og:url" content="http://justaz.github.io/2019/06/22/ES6-let和const/index.html">
 <meta property="og:site_name" content="图少の博客">
-<meta property="og:description" content="版本回退  在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 commit.若误删文件,或改乱文件就可以,从最近的一个 commit 恢复">
+<meta property="og:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-18T04:49:13.043Z">
+<meta property="og:updated_time" content="2019-06-22T12:00:49.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git版本管理">
-<meta name="twitter:description" content="版本回退  在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 commit.若误删文件,或改乱文件就可以,从最近的一个 commit 恢复">
+<meta name="twitter:title" content="ES6-let和const">
+<meta name="twitter:description" content="let和constlet基本用法1234&amp;#123;  let a = 10;  var b = 1;&amp;#125;   let 声明变量是只在它所在的代码块有效，变量不提升 var 声明变量会提升  for循环技术器12345678//letfor( let i = 0；i &amp;lt; 10;i++ )&amp;#123;  a[i] = function()&amp;#123;    console.log(i)">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://justaz.github.io/2019/06/13/git版本管理/">
+  <link rel="canonical" href="http://justaz.github.io/2019/06/22/ES6-let和const/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>git版本管理 | 图少の博客</title>
+  <title>ES6-let和const | 图少の博客</title>
   
 
 
@@ -362,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/13/git版本管理/">
+    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/22/ES6-let和const/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑扬志">
@@ -379,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git版本管理
+          <h1 class="post-title" itemprop="name headline">ES6-let和const
 
               
             
@@ -405,24 +405,12 @@
                 
               
 
-              <time title="创建时间：2019-06-13 10:14:47" itemprop="dateCreated datePublished" datetime="2019-06-13T10:14:47+08:00">2019-06-13</time>
+              <time title="创建时间：2019-06-22 19:59:31 / 修改时间：20:00:49" itemprop="dateCreated datePublished" datetime="2019-06-22T19:59:31+08:00">2019-06-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-18 12:49:13" itemprop="dateModified" datetime="2019-06-18T12:49:13+08:00">2019-06-18</time>
               
             
           </span>
@@ -439,7 +427,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/git相关/" itemprop="url" rel="index"><span itemprop="name">git相关</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript相关/" itemprop="url" rel="index"><span itemprop="name">javascript相关</span></a></span>
 
                 
                 
@@ -474,32 +462,83 @@
       
 
       
-        <h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><p>  在git中,每当你觉得把文件修改到一定程度时,就可以保存一个”快照”,在git中,这个快照被称为 <strong>commit</strong>.若误删文件,或改乱文件就可以,从最近的一个 <strong>commit</strong> 恢复</p>
-<a id="more"></a>
-<ol>
-<li><p>查看git的历史记录</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+        <h1 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h1><h2 id="let基本用法"><a href="#let基本用法" class="headerlink" title="let基本用法"></a>let基本用法</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">  var <span class="keyword">b </span>= <span class="number">1</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>git log 可以显示从最近到最远的提交日志,可加参数 –pretty=oneline</p>
-</li>
-<li><p>回退到上一个版本</p>
-<blockquote>
-<p>在 git 中,用 HEAD 表示当前版本,上一个版本就是 HEAND^,上上个就是 HEAD^^,如果往上100个版本写100个^会数不过来,直接写成 Head~100<br>回到上一个版本(过去的版本):</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>去到下一个版本(未来的某一个版本)<br>指定回到未来的某个版本:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard 1094a</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>let 声明变量是只在它所在的代码块有效，变量不提升</li>
+<li>var 声明变量会提升</li>
+</ul>
+<h3 id="for循环技术器"><a href="#for循环技术器" class="headerlink" title="for循环技术器"></a>for循环技术器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//let</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>；i &lt; <span class="number">10</span>;i++ )&#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//在循环体外引用就会报错</span></span><br><span class="line">a[<span class="number">6</span>]() <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
 
-<p>1094a为版本号</p>
 <blockquote>
-<p>当找不到未来版本的版本号时,可以使用 git reflog 记录每一次的命令</p>
+<p>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是 6。 JavaScript引擎内部会记住上一轮循环的值,初始化本轮的变量i，就在上一轮的基础上进行计算</p>
 </blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>;i++ )&#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>]() <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量i是var命令声明的，在全局范围内都有效，所以都是在操作同一个i;每一次啊循环，变量i的值都会发生改变</p>
+</blockquote>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><blockquote>
+<p>只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响；总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上称为暂时性死区</p>
+</blockquote>
+<p>注意：ES6规定暂时性死区和let,const语句不出现变量提升，主要是为了减少运行时错误，防止在变量声明前使用这个变量</p>
+<p>小结：暂时性死区的本质就是，只要一进入到当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量</p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><blockquote>
+<p>let 不允许在相同作用域内，重复声明同一个变量</p>
+</blockquote>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><h3 id="为什么需要块级作用域？"><a href="#为什么需要块级作用域？" class="headerlink" title="为什么需要块级作用域？"></a>为什么需要块级作用域？</h3><p>ES5中只有全局作用域和函数作用域，没有块级作用域，会带来许多不合理的场景</p>
+<ul>
+<li><p>第一种场景，内层变量可能会覆盖外层变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(tmp);<span class="comment">//此时变量提升，所有 tmp 为 undefined</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">    &lt;!-- 此时变量tmp提升 覆盖全局的tmp--&gt;</span><br><span class="line">    <span class="keyword">var</span> tmp = <span class="string">"hello world"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f();<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
 </li>
-</ol>
+<li><p>第二种场景,用来计数的循环变量泄露为全局变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; s.length;i++ )&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(s[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <blockquote>
-<p>git 的版本回退速度非常快,因为git在内部有个指向当前版本的HEAD指针,当你回退版本的时候,git仅仅是把 HEAD 指向 上一个版本</p>
+<p>此时的 i 在循环结束并没有消失，泄露成了全局变量</p>
 </blockquote>
+<h3 id="ES6块级作用域"><a href="#ES6块级作用域" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h3><ul>
+<li>ES6新增块级作用域，而不需要像ES5那样使用立即执行函数表达式包裹而成的</li>
+<li>块级作用域内，优先使用函数表达式来声明函数</li>
+</ul>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><blockquote>
+<ul>
+<li>const 声明一个只读变量，一旦声明，常量的值就不能改变；</li>
+<li>同let一样，只在声明所在的块级作用域内有效，声明的常量也是不提升的，同样存在暂时性死区</li>
+</ul>
+</blockquote>
+<h3 id="const本质"><a href="#const本质" class="headerlink" title="const本质"></a>const本质</h3><blockquote>
+<p>const实际保证的，并不是变量的值不得变动，而是变量指向的那个<strong>内存地址</strong>所保存的数据不的变动</p>
+</blockquote>
+<ul>
+<li>基本类型<br>对于基本数据类型来说，变量就保存值值</li>
+<li>复杂类型<br>对于复杂数据类型来说，变量指向的是内存地址，保存的只是一个指针。const只能保证这个指针是固定的(即总是指向一个固定地址)<br>至于它指向的数据结构是不是可变的，就完全不能控制了。</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.<span class="keyword">prop</span> =123;</span><br><span class="line">foo.<span class="keyword">prop</span> <span class="comment">//123,是可以对象添加属性</span></span><br><span class="line"></span><br><span class="line">foo = &#123;&#125;; <span class="comment">//此时改变了 foo 的指向，则报错了</span></span><br></pre></td></tr></table></figure>
+
+<p>若向冻结对象,可使用 object.freeze()方法</p>
+<h2 id="ES6声明变量的六种方法"><a href="#ES6声明变量的六种方法" class="headerlink" title="ES6声明变量的六种方法"></a>ES6声明变量的六种方法</h2><blockquote>
+<p>ES5中只有两种变量的方法：var命令和function命令；ES6添加了 let和const命令。还有 import和class</p>
+</blockquote>
+<h3 id="顶层对象的属性"><a href="#顶层对象的属性" class="headerlink" title="顶层对象的属性"></a>顶层对象的属性</h3><p>在浏览器中，顶层对象是window对象；在node中，指的是global对象；在ES5中，顶层对象和全局变量是等价的<br>ES6规定，let，const，class声明的全局变量，不属于顶层对象。而var和function命令声明的全局变量依旧是顶层对象的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 如果在 Node 的 REPL 环境，可以写成 global.a</span></span><br><span class="line"><span class="comment">// 或者采用通用方法，写成 this.a</span></span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">window</span>.b <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="globalThis对象"><a href="#globalThis对象" class="headerlink" title="globalThis对象"></a>globalThis对象</h3><blockquote>
+<p>javascript语言存在一个顶层对象，它提供全局环境(即全局作用域)，所有代码都是在这个环境中运行。</p>
+<ul>
+<li>在浏览器中，顶层对象是window,但 node和web worker 没有 window</li>
+<li>浏览器和web worker 里面的，self也指向顶层对象，但是 node 没有 self</li>
+<li>noee中，顶层对象是global,但其他环境都不支持</li>
+</ul>
+</blockquote>
+<p>一般使用this变量取得顶层对象</p>
+<ul>
+<li>全局环境，this返回顶层对象;在node模块和ES6模块中，this返回的是当前模块</li>
+<li>函数里面的this,如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined</li>
+</ul>
+<h1 id="参考数据"><a href="#参考数据" class="headerlink" title="参考数据"></a>参考数据</h1><p><a href>ECMAScript 6入门</a></p>
 
       
     </div>
@@ -534,7 +573,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://justaz.github.io/2019/06/13/git版本管理/" title="git版本管理">http://justaz.github.io/2019/06/13/git版本管理/</a>
+    <a href="http://justaz.github.io/2019/06/22/ES6-let和const/" title="ES6-let和const">http://justaz.github.io/2019/06/22/ES6-let和const/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -560,7 +599,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -573,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/13/git的基本使用/" rel="next" title="git的基本使用">
-                <i class="fa fa-chevron-left"></i> git的基本使用
+              <a href="/2019/06/13/对vue中插槽-slot-的理解/" rel="next" title="对vue中插槽(slot)的理解">
+                <i class="fa fa-chevron-left"></i> 对vue中插槽(slot)的理解
               </a>
             
           </div>
@@ -583,8 +622,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/13/对vue中插槽-slot-的理解/" rel="prev" title="对vue中插槽(slot)的理解">
-                对vue中插槽(slot)的理解 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/22/ES6解构赋值/" rel="prev" title="ES6解构赋值">
+                ES6解构赋值 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -784,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本回退"><span class="nav-text">版本回退</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#let和const"><span class="nav-text">let和const</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let基本用法"><span class="nav-text">let基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for循环技术器"><span class="nav-text">for循环技术器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂时性死区"><span class="nav-text">暂时性死区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不允许重复声明"><span class="nav-text">不允许重复声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-text">块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要块级作用域？"><span class="nav-text">为什么需要块级作用域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6块级作用域"><span class="nav-text">ES6块级作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-text">const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#const本质"><span class="nav-text">const本质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6声明变量的六种方法"><span class="nav-text">ES6声明变量的六种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象的属性"><span class="nav-text">顶层对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#globalThis对象"><span class="nav-text">globalThis对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考数据"><span class="nav-text">参考数据</span></a></li></ol></div>
             
 
           </div>

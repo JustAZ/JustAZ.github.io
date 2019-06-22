@@ -361,6 +361,457 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/22/ES6解构赋值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑扬志">
+      <meta itemprop="description" content="穷则独善其身!!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="图少の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/22/ES6解构赋值/" class="post-title-link" itemprop="url">ES6解构赋值</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-22 20:01:26 / 修改时间：20:02:13" itemprop="dateCreated datePublished" datetime="2019-06-22T20:01:26+08:00">2019-06-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组的解构赋值、"><a href="#数组的解构赋值、" class="headerlink" title="数组的解构赋值、"></a>数组的解构赋值、</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul>
+<li><p>以前变量赋值的写法，只能直接指定值</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">let a</span> = 1;</span><br><span class="line"><span class="attribute">let b</span> = 2;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ES6写法</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let<span class="string">[a,b]</span> = <span class="string">[1,2]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本质上是模式匹配，只要等号两边的模式相同，左边的变量就会被赋予对应的值。</p>
+</blockquote>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let [x,,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x <span class="comment">//1</span></span><br><span class="line"><span class="number">3</span> <span class="comment">//3</span></span><br><span class="line">let [head,...tail] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">head <span class="comment">//1</span></span><br><span class="line">tail <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure>
+
+<p>若解构不成功，变量的值就等于undefined</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let <span class="string">[foo]</span> = <span class="string">[]</span> //解构失败</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="不完全解构"><a href="#不完全解构" class="headerlink" title="不完全解构"></a>不完全解构</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let [x,y] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x <span class="comment">//1</span></span><br><span class="line">y <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><blockquote>
+<p>解构赋值允许指定默认值</p>
+</blockquote>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let[foo = true] = [];</span><br><span class="line">foo //true</span><br><span class="line"></span><br><span class="line">let [x,y = <span class="string">'b'</span>] = [<span class="string">'a'</span>]</span><br><span class="line">//x = <span class="string">'a'</span>,y =<span class="string">'b'</span></span><br><span class="line"></span><br><span class="line">let [x,y = <span class="string">'b'</span>] = [<span class="string">'a'</span>,<span class="string">'c'</span>]</span><br><span class="line">//x = <span class="string">'a'</span>,y = <span class="string">'c'</span></span><br></pre></td></tr></table></figure>
+
+<p>只有当一个数组成员严格等于(===)undefined,默认值才会生效</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x,y = <span class="string">'b'</span>] = [<span class="string">'a'</span>,<span class="literal">undefined</span>]</span><br><span class="line"><span class="comment">//x = 'a',y = 'b'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h1><blockquote>
+<p>对象的解构，属性没有次序，变量必须与属性名同名才能取到正确值</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let &#123; bar,foo &#125; = &#123; foo:<span class="string">'aaa'</span>,bar:<span class="string">'bbb'</span> &#125;;</span><br><span class="line">foo <span class="regexp">//</span><span class="string">'aaa'</span></span><br><span class="line">bar <span class="regexp">//</span><span class="string">'bbb'</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>若变量名和属性名不一致，必须写成以下这种形式<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let &#123; <span class="string">foo:</span>baz &#125; = &#123; <span class="string">foo:</span><span class="string">'aaa'</span>,<span class="string">bar:</span><span class="string">'bbb'</span> &#125;;</span><br><span class="line">baz <span class="comment">//"aaa",真正赋值的是赋值给baz,foo只是指定匹配模式</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>对象的解构赋值是下面形式的间写</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let &#123;<span class="string">foo:</span>foo,<span class="string">bar:</span>bar&#125; = &#123; <span class="string">foo:</span><span class="string">'aaa'</span>,<span class="string">bar:</span><span class="string">'bbb'</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象解构的内部机制：是先找到同名属性，然后再赋给对应的变量，真正被赋值的是后者，而不是前者。<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let &#123; <span class="string">foo:</span>baz &#125; = &#123; <span class="string">foo:</span><span class="string">'aaa'</span>,<span class="string">bar:</span><span class="string">'bbb'</span>&#125;</span><br><span class="line">baz <span class="comment">//"aaa"</span></span><br><span class="line">foo <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>foo 只是匹配模式，baz才是变量。真正被赋值的是变量的baz,而不是模式 foo</p>
+<h2 id="嵌套结构赋值"><a href="#嵌套结构赋值" class="headerlink" title="嵌套结构赋值"></a>嵌套结构赋值</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">  p:[</span><br><span class="line">    <span class="string">'hello'</span>,</span><br><span class="line">    &#123; y:<span class="string">'world'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line">let &#123; p:[x,&#123; y &#125;] &#125; = obj；</span><br><span class="line">x <span class="regexp">//</span> <span class="string">'hello'</span></span><br><span class="line">y <span class="regexp">//</span> <span class="string">'world'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h1><blockquote>
+<p>字符串被转换成了一个类似数组的对象<br>const [a,b,c,d,e] = ‘hello’;<br>a //“h”<br>b //“e”</p>
+</blockquote>
+<h1 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h1><blockquote>
+<p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象</p>
+</blockquote>
+<h1 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h1><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">([x,y])</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">add([<span class="number">1</span>,<span class="number">2</span>]) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h1><h1 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h1><h2 id="变换变量的值"><a href="#变换变量的值" class="headerlink" title="变换变量的值"></a>变换变量的值</h2><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">x</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">y</span> = <span class="number">2</span>;</span><br><span class="line">[x,y] = [y,x];</span><br></pre></td></tr></table></figure>
+
+<h2 id="从函数中返回多个值"><a href="#从函数中返回多个值" class="headerlink" title="从函数中返回多个值"></a>从函数中返回多个值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回一个数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [a,b,c] = example1();</span><br><span class="line"><span class="comment">//返回一个对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    foo:<span class="number">1</span>,</span><br><span class="line">    bar:<span class="number">2</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; foo,bar &#125; = example2();</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数参数的定义"><a href="#函数参数的定义" class="headerlink" title="函数参数的定义"></a>函数参数的定义</h2><p>解构赋值可以方便的将一组数组与变量名联系对应起来</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//参数是一组有次序的值</span><br><span class="line">function f([x,y,z])<span class="meta">&#123;...&#125;</span></span><br><span class="line">f([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">/参数是一组无次序的值</span><br><span class="line">function f(&#123;x,y,z&#125;)<span class="meta">&#123;..&#125;</span></span><br><span class="line">f(&#123;z:<span class="number">3</span>,y:<span class="number">2</span>,x:<span class="number">1</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="提取JSON数据"><a href="#提取JSON数据" class="headerlink" title="提取JSON数据"></a>提取JSON数据</h2><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let jsonData = &#123;</span><br><span class="line">  id：<span class="number">42</span>，</span><br><span class="line">  <span class="keyword">status</span>:<span class="string">'OK'</span>,</span><br><span class="line">  <span class="keyword">data</span>:[<span class="number">867</span>,<span class="number">5309</span>]</span><br><span class="line">&#125;;</span><br><span class="line">let &#123;id,<span class="keyword">status</span>,<span class="keyword">data</span>:<span class="keyword">number</span>&#125; = jsonData;</span><br><span class="line">console.<span class="built_in">log</span>(id,<span class="keyword">status</span>,<span class="keyword">number</span>); //<span class="number">42</span>,<span class="string">"OK"</span>,[<span class="number">867</span>,<span class="number">5309</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h2><p>未完待续…..</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/22/ES6-let和const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑扬志">
+      <meta itemprop="description" content="穷则独善其身!!">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="图少の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/22/ES6-let和const/" class="post-title-link" itemprop="url">ES6-let和const</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-22 19:59:31 / 修改时间：20:00:49" itemprop="dateCreated datePublished" datetime="2019-06-22T19:59:31+08:00">2019-06-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript相关/" itemprop="url" rel="index"><span itemprop="name">javascript相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h1><h2 id="let基本用法"><a href="#let基本用法" class="headerlink" title="let基本用法"></a>let基本用法</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line">  var <span class="keyword">b </span>= <span class="number">1</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>let 声明变量是只在它所在的代码块有效，变量不提升</li>
+<li>var 声明变量会提升</li>
+</ul>
+<h3 id="for循环技术器"><a href="#for循环技术器" class="headerlink" title="for循环技术器"></a>for循环技术器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//let</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i = <span class="number">0</span>；i &lt; <span class="number">10</span>;i++ )&#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//在循环体外引用就会报错</span></span><br><span class="line">a[<span class="number">6</span>]() <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是 6。 JavaScript引擎内部会记住上一轮循环的值,初始化本轮的变量i，就在上一轮的基础上进行计算</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>;i++ )&#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>]() <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>变量i是var命令声明的，在全局范围内都有效，所以都是在操作同一个i;每一次啊循环，变量i的值都会发生改变</p>
+</blockquote>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><blockquote>
+<p>只要块级作用域内存在let命令，它所声明的变量就“绑定”这个区域，不再受外部的影响；总之，在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上称为暂时性死区</p>
+</blockquote>
+<p>注意：ES6规定暂时性死区和let,const语句不出现变量提升，主要是为了减少运行时错误，防止在变量声明前使用这个变量</p>
+<p>小结：暂时性死区的本质就是，只要一进入到当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量</p>
+<h3 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h3><blockquote>
+<p>let 不允许在相同作用域内，重复声明同一个变量</p>
+</blockquote>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><h3 id="为什么需要块级作用域？"><a href="#为什么需要块级作用域？" class="headerlink" title="为什么需要块级作用域？"></a>为什么需要块级作用域？</h3><p>ES5中只有全局作用域和函数作用域，没有块级作用域，会带来许多不合理的场景</p>
+<ul>
+<li><p>第一种场景，内层变量可能会覆盖外层变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(tmp);<span class="comment">//此时变量提升，所有 tmp 为 undefined</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">    &lt;!-- 此时变量tmp提升 覆盖全局的tmp--&gt;</span><br><span class="line">    <span class="keyword">var</span> tmp = <span class="string">"hello world"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f();<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种场景,用来计数的循环变量泄露为全局变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>;i &lt; s.length;i++ )&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(s[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i)<span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>此时的 i 在循环结束并没有消失，泄露成了全局变量</p>
+</blockquote>
+<h3 id="ES6块级作用域"><a href="#ES6块级作用域" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h3><ul>
+<li>ES6新增块级作用域，而不需要像ES5那样使用立即执行函数表达式包裹而成的</li>
+<li>块级作用域内，优先使用函数表达式来声明函数</li>
+</ul>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><blockquote>
+<ul>
+<li>const 声明一个只读变量，一旦声明，常量的值就不能改变；</li>
+<li>同let一样，只在声明所在的块级作用域内有效，声明的常量也是不提升的，同样存在暂时性死区</li>
+</ul>
+</blockquote>
+<h3 id="const本质"><a href="#const本质" class="headerlink" title="const本质"></a>const本质</h3><blockquote>
+<p>const实际保证的，并不是变量的值不得变动，而是变量指向的那个<strong>内存地址</strong>所保存的数据不的变动</p>
+</blockquote>
+<ul>
+<li>基本类型<br>对于基本数据类型来说，变量就保存值值</li>
+<li>复杂类型<br>对于复杂数据类型来说，变量指向的是内存地址，保存的只是一个指针。const只能保证这个指针是固定的(即总是指向一个固定地址)<br>至于它指向的数据结构是不是可变的，就完全不能控制了。</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line">foo.<span class="keyword">prop</span> =123;</span><br><span class="line">foo.<span class="keyword">prop</span> <span class="comment">//123,是可以对象添加属性</span></span><br><span class="line"></span><br><span class="line">foo = &#123;&#125;; <span class="comment">//此时改变了 foo 的指向，则报错了</span></span><br></pre></td></tr></table></figure>
+
+<p>若向冻结对象,可使用 object.freeze()方法</p>
+<h2 id="ES6声明变量的六种方法"><a href="#ES6声明变量的六种方法" class="headerlink" title="ES6声明变量的六种方法"></a>ES6声明变量的六种方法</h2><blockquote>
+<p>ES5中只有两种变量的方法：var命令和function命令；ES6添加了 let和const命令。还有 import和class</p>
+</blockquote>
+<h3 id="顶层对象的属性"><a href="#顶层对象的属性" class="headerlink" title="顶层对象的属性"></a>顶层对象的属性</h3><p>在浏览器中，顶层对象是window对象；在node中，指的是global对象；在ES5中，顶层对象和全局变量是等价的<br>ES6规定，let，const，class声明的全局变量，不属于顶层对象。而var和function命令声明的全局变量依旧是顶层对象的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 如果在 Node 的 REPL 环境，可以写成 global.a</span></span><br><span class="line"><span class="comment">// 或者采用通用方法，写成 this.a</span></span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">window</span>.b <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="globalThis对象"><a href="#globalThis对象" class="headerlink" title="globalThis对象"></a>globalThis对象</h3><blockquote>
+<p>javascript语言存在一个顶层对象，它提供全局环境(即全局作用域)，所有代码都是在这个环境中运行。</p>
+<ul>
+<li>在浏览器中，顶层对象是window,但 node和web worker 没有 window</li>
+<li>浏览器和web worker 里面的，self也指向顶层对象，但是 node 没有 self</li>
+<li>noee中，顶层对象是global,但其他环境都不支持</li>
+</ul>
+</blockquote>
+<p>一般使用this变量取得顶层对象</p>
+<ul>
+<li>全局环境，this返回顶层对象;在node模块和ES6模块中，this返回的是当前模块</li>
+<li>函数里面的this,如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined</li>
+</ul>
+<h1 id="参考数据"><a href="#参考数据" class="headerlink" title="参考数据"></a>参考数据</h1><p><a href>ECMAScript 6入门</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/13/对vue中插槽-slot-的理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1776,196 +2227,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://justaz.github.io/2019/06/08/jquery选择器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑扬志">
-      <meta itemprop="description" content="穷则独善其身!!">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="图少の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/08/jquery选择器/" class="post-title-link" itemprop="url">jquery选择器</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-08 17:00:14" itemprop="dateCreated datePublished" datetime="2019-06-08T17:00:14+08:00">2019-06-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-12 23:14:02" itemprop="dateModified" datetime="2019-06-12T23:14:02+08:00">2019-06-12</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/jquery相关/" itemprop="url" rel="index"><span itemprop="name">jquery相关</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="1-基本选择器"><a href="#1-基本选择器" class="headerlink" title="1.基本选择器"></a>1.基本选择器</h1><p>基本选择器是Jquery中最常用的选择器</p>
-<ul>
-<li>id选择器: <strong>$(“#id”)</strong> 选择id值为 element 的元素,id值在文档中不能重复,所以的到的是唯一的元素</li>
-<li>元素选择器: <strong>$(“div”)</strong> 选择所有的div标签,返回 div 元素数组</li>
-<li>类选择器: <strong>$(“.class”)</strong> 选择使用 class 类的所有元素</li>
-<li>$(“*”) 选中文档中的所有元素
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/08/jquery选择器/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2005,7 +2273,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2059,7 +2327,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
